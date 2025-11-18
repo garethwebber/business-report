@@ -2,6 +2,8 @@
 
 This is a business report template in Typst
 
+![Screenshot of welcome page](report-v0.2.png)
+
 ## Location
 
 The source for this guide is held in an Github repository. Clone it from: 
