@@ -19,7 +19,6 @@ the git repository and if you install _Tintmist Typst_ as a module you will get 
 
 Typst must of course be installed (https://github.com/typst/typst/releases/download/v0.14.0/typst-x86_64-pc-windows-msvc.zip). The template makes use of two fonts which must be installed on the local machine:
 
-- Lato font
 - Font Awesome (free version): https://fontawesome.com/download
 
 ## Supporting tools 
