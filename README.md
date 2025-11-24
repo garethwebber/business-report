@@ -2,7 +2,7 @@
 
 This is a business report template in Typst
 
-![Screenshot of welcome page](thumnail.png)
+![Screenshot of welcome page](thumbnail.png)
 
 ## Location
 
