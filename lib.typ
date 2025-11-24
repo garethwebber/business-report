@@ -7,9 +7,6 @@
 //
 #let mycolor = rgb(166, 0, 120);
 #let myfont = "Arial";
-#let mylogo = image("../assets/logo.png", width: 20%);
-#let myfeatureimage = image("../assets/techimage.png", height: 6cm);
-#let myvalues = "VALUE1 | VALUE2 | VALUE3 | VALUE4";
 
 //
 //  Template for a paragaph with an author picture in a circle bottom right
@@ -58,6 +55,9 @@
 #let report(
   title: "Title of the Work",
   publishdate: "Some Date",
+  mylogo: "assets/logo.png",
+  myfeatureimage: "assets/techimage.png",
+  myvalues: "VALUE1 | VALUE2 | VALUE3 | VALUE4",
   body,
 ) = {
   // Set table to have alterate shaded rows
@@ -127,7 +127,7 @@
         dx: -7.5cm, dy: -5cm,
           box(clip: true, stroke: 5pt + mycolor, radius: 3cm,
           width: 6cm, height: 6cm,
-          myfeatureimage)
+          image(myfeatureimage, height: 6cm))
       )
     )
 
@@ -136,7 +136,7 @@
       bottom + right,
       move(
         dx: -1cm, dy: -1cm,
-        mylogo
+        image(mylogo, width: 20%)
       )
     )
 
@@ -354,7 +354,7 @@
       rect(
         fill: white,
         radius: 0.5cm,
-        mylogo,
+        image(mylogo, width: 20%),
       )
     )
   ]

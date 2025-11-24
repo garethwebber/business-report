@@ -1,4 +1,4 @@
-#import "../template/report.typ": authorwrap, mycolor
+#import "../lib.typ": authorwrap, mycolor
 #import "@preview/droplet:0.3.1": dropcap
 
 = Welcome
@@ -14,7 +14,7 @@
   )[*Welcome to this report.* 
 #text(fill: black, weight: "regular")[#lorem(50)]]]
 
-#authorwrap(authorimage: "../assets/author.png", authorcaption: "The Author, CXO")[#lorem(75)] 
+#authorwrap(authorimage: "assets/author.png", authorcaption: "The Author, CXO")[#lorem(75)] 
 
 #lorem(100)
 

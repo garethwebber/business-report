@@ -1,4 +1,4 @@
-#import "../template/report.typ": infobox
+#import "../lib.typ": infobox
 
 = Chapter of infoboxes
 

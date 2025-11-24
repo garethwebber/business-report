@@ -1,4 +1,4 @@
 #/bin/sh
 
-/opt/homebrew/opt/zathura/bin/zathura main.pdf &
-typst watch main.typ
+/opt/homebrew/opt/zathura/bin/zathura example.pdf &
+typst watch example.typ
