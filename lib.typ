@@ -1,31 +1,49 @@
-#import "@preview/wrap-it:0.1.1": wrap-content
+#import "@preview/droplet:0.3.1": dropcap
 #import "@preview/fontawesome:0.6.0": *
+#import "@preview/wrap-it:0.1.1": wrap-content
+
+#let __st-theme = state("theme")
 
 //
-// Variables shared across multiple reports go here
-// Anything specific to one report should be in main.typ as a report over-ride
-//
-#let mycolor = rgb(166, 0, 120);
-#let myfont = "Arial";
+//  Template for a paragaph with a dropped capital and
+//  the first sentence in theme color
+// 
+
+#let dropcappara(
+  firstline: none,
+  body
+) = {
+  context {
+    let theme = __st-theme.final()
+    set text(fill: theme.themecolor, weight: "semibold")
+    dropcap(height: 3, gap: 4pt,)[#firstline.first()][#firstline.slice(2) 
+    #set text(fill: black, weight: "regular") 
+    #body
+    ]
+  }
+}
 
 //
 //  Template for a paragaph with an author picture in a circle bottom right
 // 
 #let authorwrap(
-  authorimage :none,
+  authorimage: none,
   authorcaption: none,
   body,
 ) = {
-  wrap-content(
-  box(width: 3cm, height:3.5cm,
-  figure(
-  box(clip: true, stroke: 5pt + mycolor, radius: 1.5cm, width: 2.5cm, height: 2.5cm,
-          image(authorimage, height: 3cm)),
-  caption: authorcaption,
-  numbering: none)),
-  body,
-    align: bottom + right,
-  )
+  context {
+    let theme = __st-theme.final()
+    wrap-content(
+    box(width: 3cm, height:3.5cm,
+    figure(
+    box(clip: true, stroke: 5pt + theme.themecolor, radius: 1.5cm, width: 2.5cm, height: 2.5cm,
+          authorimage),
+    caption: authorcaption,
+    numbering: none)),
+    body,
+      align: bottom + right,
+    )
+  }
 }
 
 //
@@ -33,10 +51,12 @@
 // 
 #let infobox(
   info, 
-  icon: "info-circle"
+  icon: "info-circle",
 ) = {
+  context {
+    let theme = __st-theme.final()
     box(   
-      fill: mycolor.lighten(90%),
+      fill: theme.themecolor.lighten(90%),
       stroke: 1pt,
       radius: 8pt,
       width: 100%,
@@ -46,7 +66,8 @@
         align(horizon+center, fa-icon(icon, size: 2.5em)),
         align(horizon + left, info)
       )
-  )
+    )
+  }
 }
 
 //
@@ -55,11 +76,21 @@
 #let report(
   title: "Title of the Work",
   publishdate: "Some Date",
-  mylogo: "assets/logo.png",
-  myfeatureimage: "assets/techimage.png",
+  mylogo: none,
+  myfeatureimage: none,
   myvalues: "VALUE1 | VALUE2 | VALUE3 | VALUE4",
+  mycolor: rgb(166, 0, 120),
+  myfont: "Arial",
   body,
 ) = {
+  // Set Theme into context
+  context {
+    __st-theme.update((
+      themefont: myfont,
+      themecolor: mycolor,
+    ))
+  }
+
   // Set table to have alterate shaded rows
   set table( 
     align: left,
@@ -127,7 +158,7 @@
         dx: -7.5cm, dy: -5cm,
           box(clip: true, stroke: 5pt + mycolor, radius: 3cm,
           width: 6cm, height: 6cm,
-          image(myfeatureimage, height: 6cm))
+          myfeatureimage)
       )
     )
 
@@ -136,7 +167,7 @@
       bottom + right,
       move(
         dx: -1cm, dy: -1cm,
-        image(mylogo, width: 20%)
+        mylogo
       )
     )
 
@@ -354,7 +385,7 @@
       rect(
         fill: white,
         radius: 0.5cm,
-        image(mylogo, width: 20%),
+        mylogo,
       )
     )
   ]

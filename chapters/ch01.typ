@@ -1,20 +1,13 @@
-#import "../lib.typ": authorwrap, mycolor
-#import "@preview/droplet:0.3.1": dropcap
+#import "../lib.typ": authorwrap, dropcappara
 
 = Welcome
 
-// This looks messy but needed to get drop cap and colors to work
-#text(
-  fill: mycolor,
-  weight: "semibold",
-  )[
-  #dropcap(
-    height: 3,
-    gap: 4pt,
-  )[*Welcome to this report.* 
-#text(fill: black, weight: "regular")[#lorem(50)]]]
+#dropcappara(firstline: "Welcome to this report.")[#lorem(50)]
 
-#authorwrap(authorimage: "assets/author.png", authorcaption: "The Author, CXO")[#lorem(75)] 
+#authorwrap(
+  authorimage: image("../assets/author.png", height: 3cm), 
+  authorcaption: "The Author, CXO"
+)[#lorem(75)] 
 
 #lorem(100)
 
