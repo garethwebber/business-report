@@ -5,7 +5,7 @@
 #dropcappara(firstline: "Welcome to this report.")[#lorem(50)]
 
 #authorwrap(
-  authorimage: image("../assets/author.png", height: 3cm), 
+  authorimage: image("../assets/author.svg"), 
   authorcaption: "The Author, CXO"
 )[#lorem(75)] 
 
