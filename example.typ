@@ -4,7 +4,7 @@
   title: "Business Report",
   publishdate: "November 2025",
   mylogo: image("assets/mylogo.svg", width: 35%),
-  myfeatureimage: image("assets/techimage.png", height: 6cm),
+  myfeatureimage: image("assets/techimage.svg", height: 6cm),
   myvalues: "VALUE1 | VALUE2 | VALUE3 | VALUE4",
   mycolor: rgb(0, 166, 156),
   myfont: "Montserrat"
