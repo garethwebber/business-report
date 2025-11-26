@@ -28,7 +28,7 @@
 == Sub-heading with an image
 
 #figure(
-  image("../assets/techimage.png", width:50%),
+  image("../assets/techimage.svg", width:50%),
   caption: ["Technology Image"],
 )
 
