@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg"
-     width="800" height="400"
-     viewBox="0 0 800 400"
+     width="400" height="400"
+     viewBox="0 0 400 400"
      role="img" aria-labelledby="title desc">
   <title id="title">My Logo — geometric mark with text</title>
   <desc id="desc">Three overlapping geometric shapes forming an abstract mark with the words "my logo" centered below. Transparent background.</desc>
@@ -35,7 +35,7 @@
   </defs>
 
   <!-- Geometric mark -->
-  <g transform="translate(600,140)" filter="url(#shadow)">
+  <g transform="translate(220,140)" filter="url(#shadow)">
     <!-- left rounded square -->
     <rect x="-200" y="-80" width="160" height="160" rx="24" ry="24"
           fill="url(#gradA)" opacity="0.95" transform="rotate(-18) translate(20,-8)"/>
@@ -52,7 +52,7 @@
   </g>
 
   <!-- Text: "my logo" -->
-  <text x="580" y="350" text-anchor="middle"
+  <text x="200" y="350" text-anchor="middle"
         font-family="Montserrat, Arial, Helvetica, sans-serif"
         font-weight="600" font-size="48" letter-spacing="1.4"
         fill="#000000">

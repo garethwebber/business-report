@@ -3,12 +3,11 @@
 #show: report.with(
   title: "Business Report",
   publishdate: "November 2025",
-  mylogo: image("mylogo.svg", width: 35%),
+  mylogo: image("mylogo.svg", width: 25%),
   myfeatureimage: image("techimage.svg", height: 6cm),
   myvalues: "VALUE1 | VALUE2 | VALUE3 | VALUE4",
-  mycolor: rgb(36, 20, 166),
-//  myfont: "IBM Plex Sans"
-  myfont: "Montserrat"
+  mycolor: rgb("#1300a7"),
+  myfont: "IBM Plex Sans"
 )
 
 = Welcome
